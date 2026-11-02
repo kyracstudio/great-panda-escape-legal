@@ -1,0 +1,272 @@
+/* Great Panda Escape — legal pages (Privacy Policy, Terms, index).
+   Colours from the game: jungle green, bamboo gold, the panda's red bandana. */
+/* Font: Luckiest Guy, Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI).
+   Licensed under the Apache License, Version 2.0: https://www.apache.org/licenses/LICENSE-2.0
+   (luckiest-guy.woff2 is the unchanged file from @fontsource/luckiest-guy) */
+@font-face {
+  font-family: "Luckiest Guy";
+  src: url("luckiest-guy.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --jungle-900: #0d3511;
+  --jungle-700: #1d6421;
+  --jungle-500: #2f8f2c;
+  --leaf: #7cc242;
+  --mint: #eef8e8;
+  --gold: #ffc531;
+  --gold-dark: #b77d00;
+  --red: #d62828;
+  --sky: #2479c2;
+  --plum: #8e44ad;
+  --ink: #1b261b;
+  --muted: #5d6b5d;
+  --cream: #faf7ee;
+  --card: #ffffff;
+  --line: #e4ead9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(47, 143, 44, 0.08) 1px, transparent 0) 0 0 / 22px 22px,
+    var(--cream);
+}
+
+a { color: var(--jungle-700); font-weight: 600; text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+
+/* ── hero ─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 16px 92px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(160deg, var(--jungle-900) 0%, var(--jungle-700) 55%, var(--jungle-500) 100%);
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, rgba(124, 194, 66, 0.35), rgba(124, 194, 66, 0.05));
+}
+.hero::before { left: -90px; top: -70px; transform: rotate(18deg); }
+.hero::after { right: -110px; bottom: -120px; transform: rotate(-25deg); width: 320px; height: 320px; }
+.hero > * { position: relative; z-index: 1; }
+
+.app-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  background: #fff;
+}
+.brand { margin: 14px 0 0; font-family: "Luckiest Guy", system-ui, sans-serif; font-weight: 400; line-height: 1; letter-spacing: 1px; }
+.brand small {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #d9f3c6;
+  margin-bottom: 4px;
+}
+.brand span {
+  display: block;
+  font-size: clamp(34px, 8vw, 54px);
+  color: var(--gold);
+  text-shadow: 0 3px 0 var(--gold-dark), 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+.page-pill {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--jungle-700);
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+}
+.updated { display: block; margin-top: 12px; font-size: 14px; color: #cfeec0; }
+.tagline { margin: 12px 0 0; font-size: 17px; color: #e3f6d6; }
+
+/* ── page body ────────────────────────────────────── */
+main {
+  max-width: 780px;
+  margin: -60px auto 0;
+  padding: 0 16px 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  width: fit-content;
+  margin: 0 auto 18px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(13, 53, 17, 0.14);
+}
+.nav a {
+  padding: 7px 20px;
+  border-radius: 999px;
+  color: var(--jungle-700);
+  text-decoration: none;
+  font-size: 15px;
+}
+.nav a:hover { background: var(--mint); color: var(--jungle-900); }
+.nav a[aria-current="page"] { background: var(--gold); color: #3b2a00; box-shadow: inset 0 -2px 0 var(--gold-dark); }
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 22px 22px 14px;
+  margin: 0 0 16px;
+  box-shadow: 0 6px 22px rgba(13, 53, 17, 0.08);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent, var(--jungle-500));
+}
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--jungle-900);
+}
+.card h2 .badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 21px;
+  background: color-mix(in srgb, var(--accent, var(--jungle-500)) 16%, #fff);
+}
+.card p { margin: 0 0 12px; }
+.card ul { margin: 0 0 12px; padding-left: 22px; }
+.card li { margin: 0 0 6px; }
+.card li::marker { color: var(--accent, var(--jungle-500)); }
+
+.c-green { --accent: var(--jungle-500); }
+.c-gold { --accent: #e0a800; }
+.c-red { --accent: var(--red); }
+.c-sky { --accent: var(--sky); }
+.c-plum { --accent: var(--plum); }
+
+/* the short version: big friendly ticks */
+.summary {
+  background: linear-gradient(135deg, #f3fbe9, #e3f4d6);
+  border: 2px solid #b9df94;
+  border-left: 6px solid var(--jungle-500);
+}
+.summary ul { list-style: none; padding: 0; }
+.summary li { position: relative; padding-left: 34px; margin-bottom: 10px; }
+.summary li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+  background: var(--jungle-500);
+}
+
+/* "On this page" */
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.toc a {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--jungle-900);
+  background: var(--mint);
+  border: 1px solid #cfe7bf;
+}
+.toc a:hover { background: var(--gold); color: #3b2a00; }
+
+.warn {
+  margin: 0 0 16px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff6d8, #ffe9a8);
+  border: 2px solid #e8b100;
+  color: #5c4100;
+}
+.warn h2 { margin: 0 0 6px; font-size: 18px; line-height: 1.3; color: #4a3400; }
+.warn p { margin: 0; }
+.note {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--jungle-900);
+  font-size: 15px;
+}
+
+/* index: two big link cards */
+.links { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 16px; }
+.link-card {
+  display: block;
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--accent);
+  box-shadow: 0 6px 22px rgba(13, 53, 17, 0.08);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 400;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.link-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(13, 53, 17, 0.14); color: var(--ink); }
+.link-card .badge {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  font-size: 28px;
+  background: color-mix(in srgb, var(--accent) 16%, #fff);
+}
+.link-card b { display: block; margin: 6px 0 4px; font-size: 20px; color: var(--jungle-900); }
+.link-card span { color: var(--muted); }
+.link-card em { display: inline-block; margin-top: 10px; font-style: normal; font-weight: 800; color: var(--accent); }
+
+/* ── footer ───────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 28px 16px 36px;
+  color: #cfe7bf;
+  background: var(--jungle-900);
+  font-size: 14px;
+}
+footer img { width: 40px; height: 40px; border-radius: 11px; vertical-align: middle; margin-right: 8px; }
+footer a { color: var(--gold); }
+footer p { margin: 8px 0 0; }
+
+@media (max-width: 520px) {
+  .card { padding: 18px 16px 10px; border-radius: 16px; }
+  .card h2 { font-size: 18px; }
+  .hero { padding-top: 32px; }
+}
